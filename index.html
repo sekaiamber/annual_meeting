@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>2015年工作述职 | by Xu Xiaomeng</title>
+    <meta name="author" content="sekaiamber(Xu Xiaomeng)" />
+    <link href="styles/g.css" rel="stylesheet" />
+    <link href="styles/fairy.css" rel="stylesheet" />
+    <link href="styles/google/prettify.css" rel="stylesheet" />
+    <script src="scripts/fairy.js"></script>
+<!-- <script src="scripts/fairy.maker.js"></script> -->
+    <script src="scripts/jquery-1.11.1.min.js"></script>
+    <script src="scripts/google/prettify.js"></script>
+    <script src="scripts/g.js"></script>
+</head>
+<body>
+
+    <div id="fairy">
+        <div class="fairy-step title p1" step-index="1">
+            <div class="title-text">2015年工作述职</div>
+            <div>-- 数据挖掘组@上海 --</div>
+            <div><br><br>回顾·展望<br><br></div>
+            <div>Xu Xiaomeng</div>
+            <div>Baozou Technology</div>
+        </div>
+
+<!-- CH1  -->
+
+        <div class="fairy-step ch1 p1" step-index="100" fairy-scale="3">
+            爆点TV数据基础服务Bzmine
+        </div>
+        <div class="fairy-step ch1 p2" step-index="101">
+            Bzmine是爆点TV的数据基础服务，在一开始，它承担了爆点TV项目的各类搜索、查询以及推荐服务，慢慢的它开始承担日志分析的功能，并且负责一部分特殊的后台日志需求，这为日后爆点TV的日志系统规划提供了蓝图。
+        </div>
+        <div class="fairy-step ch1 p3" step-index="102">
+            一开始的BZmine架构<br><br>
+            <img src="images/bzmine01.png" >
+        </div>
+        <div class="fairy-step ch1 p4" step-index="103">
+            <img src="images/bzmine02-01.png">
+        </div>
+        <div class="fairy-step ch1 p5" step-index="104">
+            推荐服务：<br>
+            <ul>
+                <li>基于内容：当用户在观看一个视频时，向用户推荐与这个视频相似的视频。</li>
+                <li>基于用户数据：当用户在观看一个视频时，喜欢这个视频的用户也喜欢的视频</li>
+            </ul>
+        </div>
+        <div class="fairy-step ch1 p6" step-index="105">
+            日志分析：<br>随着运营需求的不断扩大，简单的数据分析难以满足现状，所以Bzmine也承担起了复杂日志分析的功能，这部分功能需要对特定日志进行提取、预处理以及最终呈现。当初这部分内容通过Bzmine Worker定时处理，然而随着数据量不断扩大，这部分功能已经转移到了新的日志系统上。现在Bzmine只提供查询API。
+        </div>
+
+<!-- CH2  -->
+
+        <div class="fairy-step ch2 p1" step-index="200" fairy-scale="3">
+            日志分析系统
+        </div>
+        <div class="fairy-step ch2 p2" step-index="201">
+            日志分析系统是为了应对日益增大的运营与开发需求从BZmine中分离出来的系统，这个系统最开始使用logstash进行日志分离和简单的处理，当前进过一次升级，分析功能已经部署在我们的分布式计算平台中。
+        </div>
+        <div class="fairy-step ch2 p3" step-index="202">
+            一开始的日志系统架构<br><br>
+            <img src="images/log01.png" >
+        </div>
+        <div class="fairy-step ch2 p4" step-index="203">
+            随着越来越复杂的日志需求，logstash的简单处理以及为了实现这些处理而编写的繁琐配置难以满足现状，也是随着分布式计算平台的上线，我们将logstash的处理部分迁移至kafka队列以及Spark平台。
+        </div>
+
+<!-- CH3  -->
+
+        <div class="fairy-step ch3 p1" step-index="300" fairy-scale="3">
+            离线及实时运算
+        </div>
+        <div class="fairy-step ch3 p2" step-index="301">
+            为了应对海量数据运算以及方便各类计算开发，我们部署了Spark集群来进行分布式运算，当前，PIO推荐引擎，实时日志分析系统，离线任务系统都从中获取运算资源。我们开发了一套实时处理日志的系统，可以实现10秒级别日志实时分析。我们也开发了一套离线计算系统，这部分可以定时为更加复杂的计算提供支持。
+        </div>
+        <div class="fairy-step ch3 p3" step-index="302">
+            Spark集群<br><br>
+            <img src="images/spark01.png" >
+        </div>
+
+<!-- CH4  -->
+
+        <div class="fairy-step ch4 p1" step-index="400" fairy-scale="3">
+            反垃圾服务
+        </div>
+        <div class="fairy-step ch4 p2" step-index="401">
+            随着和用户互动的数据增多，系统面临着垃圾消息的困境，我们为南京部门开发了反垃圾评论服务，它使用机器学习的方法，使反垃圾服务不断自我完善，越用越精准，改善低效的关键字法，解放大量手动过滤所需要的人力。
+        </div>
+        <div class="fairy-step ch4 p3 theme-border" step-index="402">
+            <img src="images/junk.jpg" >
+        </div>
+
+<!-- CH5  -->
+
+        <div class="fairy-step ch5 p1" step-index="500" fairy-scale="3">
+            展望
+        </div>
+        <div class="fairy-step ch5 p2" step-index="501">
+            随着项目用户急剧增加，我们也意识到数据对运营开发的重要性。爆点TV刚刚增加了用户评论的功能，日后这部分可以与现有的反垃圾服务整合。今年年初的日志量在短短一个月增加了近5倍，这是项目运营部门同事们的努力带来的成果，然而也是这对我们整个日志系统是一个不小的考验，幸运的是，通过良好的系统规划，我们可以很容易地在有限的资源中扩展系统计算能力，未来我们将更加完善这个系统，使得它能更好地为我们服务。
+        </div>
+
+<!-- CH6  -->
+
+        <div class="fairy-step ch6 p1" step-index="600" fairy-scale="8">
+            Data Mining
+        </div>
+
+<!-- CH9  -->
+        <div class="fairy-step ch9" step-index="900">
+            Thank you :)<br><span style="font-size:30px;">Powered By fairy.js</span>
+            <div><button id="replay">Replay</button></div>
+        </div>
+
+    </div>
+    <script>
+        prettyPrint();
+        fairy('init', {
+            perspective: 1000,
+            transitionDuration: 1000,
+            events: {
+                change: function(dom, index) {
+                    $(".fairy-step").removeClass('show');
+                    $(".fairy-element").removeClass('show');
+                    $(".fairy-step").removeClass('overview');
+                    $(".fairy-element").removeClass('overview');
+                    if (index < 2) {
+                        $(".fairy-step.title.p1").addClass('show');
+                    } else if (index < 100) {
+                        $(".fairy-step.title").addClass('show');
+                        $(".fairy-step.title.p1").removeClass('show');
+                    } else if (index < 600) {
+                        $(".fairy-step.ch1").addClass('show');
+                        $(".fairy-element.ch1").addClass('show');
+                        $(".fairy-step.ch2").addClass('show');
+                        $(".fairy-element.ch2").addClass('show');
+                        $(".fairy-step.ch3").addClass('show');
+                        $(".fairy-element.ch3").addClass('show');
+                        $(".fairy-step.ch4").addClass('show');
+                        $(".fairy-element.ch4").addClass('show');
+                        $(".fairy-step.ch5").addClass('show');
+                        $(".fairy-element.ch5").addClass('show');
+                        if (index == 103) {
+                            $(".fairy-step.ch1.p4").html('<img src="images/bzmine02.png">')
+                        } else {
+                            $(".fairy-step.ch1.p4").html('<img src="images/bzmine02-01.png">')
+                        }
+                    } else if (index < 700) {
+                        $(".fairy-step.ch1").addClass('show overview');
+                        $(".fairy-element.ch1").addClass('show overview');
+                        $(".fairy-step.ch2").addClass('show overview');
+                        $(".fairy-element.ch2").addClass('show overview');
+                        $(".fairy-step.ch3").addClass('show overview');
+                        $(".fairy-element.ch3").addClass('show overview');
+                        $(".fairy-step.ch4").addClass('show overview');
+                        $(".fairy-element.ch4").addClass('show overview');
+                        $(".fairy-step.ch5").addClass('show overview');
+                        $(".fairy-element.ch5").addClass('show overview');
+                        $(".fairy-step.ch6").addClass('show overview');
+                        $(".fairy-element.ch6").addClass('show overview');
+                    } else if (index < 1000) {
+                        $(".fairy-step.ch9").addClass('show');
+                        $(".fairy-element.ch9").addClass('show');
+                    };
+                    $(".fairy-step.not-always-show").removeClass('show');
+                }
+            }
+        })('start');
+        $("#replay").click(function(){
+            fairy('start');
+        });
+    </script>
+</body>
+</html>
